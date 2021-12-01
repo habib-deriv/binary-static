@@ -224,6 +224,9 @@ const Footer = () => (
                         <p>
                             {it.L('In the rest of the EU, Synthetic indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority ([_1]licence no. MGA/B2C/102/2000[_3])  and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete [_2]Regulatory Information[_3].', `<a href=${it.url_for('download/regulation/MGA_licence.pdf')} target="_blank">`, `<a href="${it.url_for('regulation')}">`, '</a>')}
                         </p>
+                        <p>
+                            {it.L('Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries.')}
+                        </p>
                     </div>
                 </div>
                 <div className='gr-row'>
