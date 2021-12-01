@@ -155,6 +155,9 @@ const Footer = () => (
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
+                            {it.L('Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries.')}
+                        </p>
+                        <p>
                             {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
