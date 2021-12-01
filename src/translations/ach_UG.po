@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-19 13:04\n"
+"PO-Revision-Date: 2021-12-01 00:25\n"
 "Last-Translator: \n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -457,9 +457,6 @@ msgstr "crwdns163488:0%1crwdnd163488:0%1crwdne163488:0"
 msgid "%1Founded%2 October 1999"
 msgstr "crwdns52662:0%1Fcrwdnd52662:0%2crwdne52662:0"
 
-msgid "%1In regard to customers of Deriv (MX) Ltd, online gambling debts are enforceable by law in the Isle of Man.%2"
-msgstr "crwdns123316:0%1crwdnd123316:0%2crwdne123316:0"
-
 msgid "%1Manage your accounts%2"
 msgstr "crwdns53230:0%1crwdnd53230:0%2crwdne53230:0"
 
@@ -595,6 +592,9 @@ msgstr "crwdns66654:0crwdne66654:0"
 msgid "1-2 years"
 msgstr "crwdns37561:0crwdne37561:0"
 
+msgid "1. Ensure to close all your positions"
+msgstr "crwdns168131:0crwdne168131:0"
+
 msgid "1. Proof of identity"
 msgstr "crwdns41737:0crwdne41737:0"
 
@@ -630,6 +630,9 @@ msgstr "crwdns37566:0crwdne37566:0"
 
 msgid "2. Selfie with proof of ID"
 msgstr "crwdns68434:0crwdne68434:0"
+
+msgid "2. Withdraw your funds"
+msgstr "crwdns168133:0crwdne168133:0"
 
 msgid "2. Your desktop window stays open"
 msgstr "crwdns158264:0crwdne158264:0"
@@ -753,6 +756,9 @@ msgstr "crwdns53302:0crwdne53302:0"
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is Synthetic Indices."
 msgstr "crwdns167609:0crwdne167609:0"
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
+msgstr "crwdns168595:0crwdne168595:0"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "crwdns37604:0crwdne37604:0"
@@ -2098,8 +2104,8 @@ msgstr "crwdns161582:0%1pcrwdnd161582:0%2crwdne161582:0"
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "crwdns56184:0crwdne56184:0"
 
-msgid "Before you deactivate your account, you need to do the following:"
-msgstr "crwdns163962:0crwdne163962:0"
+msgid "Before you deactivate your account, you’ll need to:"
+msgstr "crwdns168135:0crwdne168135:0"
 
 msgid "Beginner"
 msgstr "crwdns50426:0crwdne50426:0"
@@ -2253,6 +2259,9 @@ msgstr "crwdns53106:0crwdne53106:0"
 
 msgid "Binary.com in Numbers"
 msgstr "crwdns117104:0crwdne117104:0"
+
+msgid "Binary.com is moving to Deriv on 30 November"
+msgstr "crwdns168629:0crwdne168629:0"
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "crwdns46517:0crwdne46517:0"
@@ -2584,9 +2593,6 @@ msgstr "crwdns52656:0crwdne52656:0"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "crwdns37990:0crwdne37990:0"
 
-msgid "Champion Group Ltd: Vanuatu"
-msgstr "crwdns158156:0crwdne158156:0"
-
 msgid "Change API Endpoint"
 msgstr "crwdns37991:0crwdne37991:0"
 
@@ -2842,9 +2848,6 @@ msgstr "crwdns121942:0crwdne121942:0"
 msgid "Clients in the European Union who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited."
 msgstr "crwdns159262:0crwdne159262:0"
 
-msgid "Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd."
-msgstr "crwdns159264:0crwdne159264:0"
-
 msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr "crwdns84811:0%1crwdnd84811:0%2crwdne84811:0"
 
@@ -2862,12 +2865,6 @@ msgstr "crwdns43584:0crwdne43584:0"
 
 msgid "Clients registered with Deriv (Europe) Limited can refer their complaints to the Malta Gaming Authority via the %1Player Support Unity%3. They can file their unresolved disputes with the European Commission’s %2Online Dispute Resolution (ODR)%3."
 msgstr "crwdns166097:0%1crwdnd166097:0%3crwdnd166097:0%2crwdnd166097:0%3crwdne166097:0"
-
-msgid "Clients registered with Deriv (MX) Ltd can formally submit a complaint to their local Supervisory Authority."
-msgstr "crwdns123322:0crwdne123322:0"
-
-msgid "Clients registered with Deriv (MX) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filing the adjudication form on the %1ADR entity's website%2."
-msgstr "crwdns166099:0%1crwdnd166099:0%2crwdne166099:0"
 
 msgid "Clients registered with Deriv Investments (Europe) Limited can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
 msgstr "crwdns123326:0%1hecrwdnd123326:0%2crwdne123326:0"
@@ -2901,9 +2898,6 @@ msgstr "crwdns56202:0crwdne56202:0"
 
 msgid "Close identity verification screen"
 msgstr "crwdns158296:0crwdne158296:0"
-
-msgid "Close open positions"
-msgstr "crwdns163964:0crwdne163964:0"
 
 msgid "Close your %1 account."
 msgstr "crwdns85235:0%1crwdne85235:0"
@@ -3721,6 +3715,9 @@ msgstr "crwdns123528:0crwdne123528:0"
 msgid "Deactivate Account"
 msgstr "crwdns162522:0crwdne162522:0"
 
+msgid "Deactivate account"
+msgstr "crwdns168137:0crwdne168137:0"
+
 msgid "Deactivate account?"
 msgstr "crwdns162524:0crwdne162524:0"
 
@@ -3790,8 +3787,8 @@ msgstr "crwdns117994:0crwdne117994:0"
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "crwdns163898:0crwdne163898:0"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
-msgstr "crwdns54384:0crwdne54384:0"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote"
+msgstr "crwdns168741:0crwdne168741:0"
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
 msgstr "crwdns166147:0%1crwdne166147:0"
@@ -3874,8 +3871,8 @@ msgstr "crwdns158160:0crwdne158160:0"
 msgid "Deriv (Europe) Limited"
 msgstr "crwdns123162:0crwdne123162:0"
 
-msgid "Deriv (Europe) Limited,"
-msgstr "crwdns123334:0crwdne123334:0"
+msgid "Deriv (Europe) Limited or"
+msgstr "crwdns168743:0crwdne168743:0"
 
 msgid "Deriv (FX) Ltd"
 msgstr "crwdns122182:0crwdne122182:0"
@@ -3891,18 +3888,6 @@ msgstr "crwdns122186:0%1crwdnd122186:0%2crwdne122186:0"
 
 msgid "Deriv (FX) Ltd: Labuan, Territory of Malaysia"
 msgstr "crwdns158162:0crwdne158162:0"
-
-msgid "Deriv (MX) Ltd"
-msgstr "crwdns156862:0crwdne156862:0"
-
-msgid "Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under %1account no. 39172%3 and by the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "crwdns159268:0%1acrwdnd159268:0%3crwdnd159268:0%2crwdnd159268:0%3crwdne159268:0"
-
-msgid "Deriv (MX) Ltd."
-msgstr "crwdns123342:0crwdne123342:0"
-
-msgid "Deriv (MX) Ltd: the Isle of Man"
-msgstr "crwdns158164:0crwdne158164:0"
 
 msgid "Deriv (SVG) LLC"
 msgstr "crwdns121200:0crwdne121200:0"
@@ -3961,17 +3946,17 @@ msgstr "crwdns158868:0crwdne158868:0"
 msgid "Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed in Malta and regulated by the Malta Financial Services Authority under the Investments Services Act to provide investment services in the European Union (%1licence no. IS/70156%2). It is also authorised and subject to limited regulation by the Financial Conduct Authority in the UK. Details about the extent of our authorisation and regulation by the Financial Conduct Authority are available from us on request."
 msgstr "crwdns158870:0%1licrwdnd158870:0%2crwdne158870:0"
 
-msgid "Deriv Investments (Europe) Limited, or"
-msgstr "crwdns123356:0crwdne123356:0"
-
 msgid "Deriv Investments (Europe) Limited."
 msgstr "crwdns123358:0crwdne123358:0"
 
 msgid "Deriv Limited"
 msgstr "crwdns118208:0crwdne118208:0"
 
-msgid "Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
-msgstr "crwdns118210:0crwdne118210:0"
+msgid "Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries."
+msgstr "crwdns168733:0crwdne168733:0"
+
+msgid "Deriv Limited, with registered office at 13 Castle Street, St. Helier, JE2 3BT, Jersey, is the holding company for the subsidiaries listed below."
+msgstr "crwdns168635:0crwdne168635:0"
 
 msgid "Deriv.com launched"
 msgstr "crwdns70599:0crwdne70599:0"
@@ -6133,17 +6118,23 @@ msgstr "crwdns53394:0crwdne53394:0"
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "crwdns41510:0%1ocrwdnd41510:0%2crwdne41510:0"
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr "crwdns163966:0%1Ccrwdnd163966:0%2crwdne163966:0"
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgstr "crwdns168139:0%1Ccrwdnd168139:0%2crwdne168139:0"
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr "crwdns163968:0%1crwdnd163968:0%2crwdne163968:0"
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgstr "crwdns168141:0%1crwdnd168141:0%2crwdne168141:0"
 
-msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr "crwdns163970:0%1crwdnd163970:0%2crwdne163970:0"
+msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgstr "crwdns168143:0%1crwdnd168143:0%2crwdnd168143:0%3crwdnd168143:0%4crwdne168143:0"
 
-msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr "crwdns163972:0crwdne163972:0"
+msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
+msgstr "crwdns168145:0crwdne168145:0"
+
+msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
+msgstr "crwdns168147:0%1crwdnd168147:0%2crwdne168147:0"
+
+msgid "If you have a DMT5 real account, log in to close any open positions."
+msgstr "crwdns168149:0crwdne168149:0"
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "crwdns85331:0crwdne85331:0"
@@ -6388,9 +6379,6 @@ msgstr "crwdns38744:0crwdne38744:0"
 msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
 msgstr "crwdns118218:0crwdne118218:0"
 
-msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr "crwdns163912:0crwdne163912:0"
-
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "crwdns53410:0%1gcrwdnd53410:0%2crwdne53410:0"
 
@@ -6436,11 +6424,8 @@ msgstr "crwdns123372:0%1licrwdnd123372:0%2crwdne123372:0"
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "crwdns123374:0%1licrwdnd123374:0%2crwdne123374:0"
 
-msgid "In the Isle of Man and the UK, virtual-events-based bets on synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "crwdns167631:0%1acrwdnd167631:0%3crwdnd167631:0%2crwdnd167631:0%3crwdne167631:0"
-
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
-msgstr "crwdns123376:0crwdne123376:0"
+msgid "In the UK, our clients trade through Deriv Investments (Europe) Limited. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
+msgstr "crwdns168875:0crwdne168875:0"
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "crwdns56262:0crwdne56262:0"
@@ -8142,6 +8127,9 @@ msgstr "crwdns53426:0%1Ccrwdnd53426:0%2crwdne53426:0"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
 msgstr "crwdns164110:0crwdne164110:0"
+
+msgid "Note: Please switch to your %1 account to change currencies."
+msgstr "crwdns168593:0%1crwdne168593:0"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "crwdns53248:0crwdne53248:0"
@@ -10357,6 +10345,9 @@ msgstr "crwdns54972:0crwdne54972:0"
 msgid "Should be %1"
 msgstr "crwdns46276:0%1crwdne46276:0"
 
+msgid "Should be 1"
+msgstr "crwdns168731:0crwdne168731:0"
+
 msgid "Should be a valid number."
 msgstr "crwdns43143:0crwdne43143:0"
 
@@ -10486,6 +10477,9 @@ msgstr "crwdns87372:0crwdne87372:0"
 msgid "Sorry, no mobile phone bills"
 msgstr "crwdns158518:0crwdne158518:0"
 
+msgid "Sorry, options trading isn’t available in the United Kingdom and the Isle of Man"
+msgstr "crwdns168077:0crwdne168077:0"
+
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "crwdns39809:0crwdne39809:0"
 
@@ -10557,6 +10551,9 @@ msgstr "crwdns39831:0crwdne39831:0"
 
 msgid "Start trading"
 msgstr "crwdns44597:0crwdne44597:0"
+
+msgid "Start using Deriv with your Binary.com email and password."
+msgstr "crwdns168631:0crwdne168631:0"
 
 msgid "State Benefits"
 msgstr "crwdns52626:0crwdne52626:0"
@@ -11365,8 +11362,8 @@ msgstr "crwdns68134:0crwdne68134:0"
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "crwdns56948:0crwdne56948:0"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "crwdns166149:0crwdne166149:0"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. If the client’s balance becomes negative due to Stop Out, an automatic compensation will revert the client’s balance to zero. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "crwdns168735:0crwdne168735:0"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "crwdns66782:0crwdne66782:0"
@@ -11395,8 +11392,8 @@ msgstr "crwdns55262:0crwdne55262:0"
 msgid "The Company holds customer funds in bank accounts separate from the operational accounts, and arrangements have been made to ensure that the assets in the customer accounts will be distributed to the customers in the event of insolvency."
 msgstr "crwdns55266:0crwdne55266:0"
 
-msgid "The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (MX) Ltd & Deriv (Europe) Limited have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission's requirements for the segregation of customer funds at the level of medium protection."
-msgstr "crwdns123392:0crwdne123392:0"
+msgid "The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (Europe) Limited has arrangements in place so that in the event of insolvency, it is able to meet its obligations to clients. These arrangements are in the form of a loan agreement between Deriv (Europe) Limited and the parent company, Deriv Limited. This loan will always at minimum cover the client liabilities. This meets the Gambling Commission's requirements for the segregation of customer funds at the level of medium protection."
+msgstr "crwdns168745:0crwdne168745:0"
 
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "crwdns55268:0crwdne55268:0"
@@ -13042,6 +13039,9 @@ msgstr "crwdns40208:0crwdne40208:0"
 msgid "To smoothly verify you, we need a better photo"
 msgstr "crwdns158574:0crwdne158574:0"
 
+msgid "To transfer funds to your MT5 account, enter an amount of %1 or more"
+msgstr "crwdns168597:0%1crwdne168597:0"
+
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "crwdns55800:0crwdne55800:0"
 
@@ -13209,6 +13209,9 @@ msgstr "crwdns42453:0crwdne42453:0"
 
 msgid "Trade now"
 msgstr "crwdns44644:0crwdne44644:0"
+
+msgid "Trade on Deriv"
+msgstr "crwdns168633:0crwdne168633:0"
 
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "crwdns90126:0crwdne90126:0"
@@ -13627,8 +13630,8 @@ msgstr "crwdns167581:0crwdne167581:0"
 msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
 msgstr "crwdns167877:0crwdne167877:0"
 
-msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits."
-msgstr "crwdns167879:0crwdne167879:0"
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat."
+msgstr "crwdns168157:0crwdne168157:0"
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "crwdns52438:0crwdne52438:0"
@@ -13861,8 +13864,8 @@ msgstr "crwdns121682:0crwdne121682:0"
 msgid "Verify your identity"
 msgstr "crwdns167403:0crwdne167403:0"
 
-msgid "Version 50. Last modified 06-10-2021."
-msgstr "crwdns167849:0crwdne167849:0"
+msgid "Version 52. Last modified 26-11-2021."
+msgstr "crwdns168761:0crwdne168761:0"
 
 msgid "Video Room Facility"
 msgstr "crwdns40362:0crwdne40362:0"
@@ -14002,8 +14005,8 @@ msgstr "crwdns46442:0crwdne46442:0"
 msgid "We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Deriv group of companies in collaboration with the Marketing team."
 msgstr "crwdns118296:0crwdne118296:0"
 
-msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
-msgstr "crwdns46457:0crwdne46457:0"
+msgid "We are licensed and regulated in Malta since 2015."
+msgstr "crwdns168739:0crwdne168739:0"
 
 msgid "We are registered with the Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry (%1view membership%2)."
 msgstr "crwdns123178:0%1crwdnd123178:0%2crwdne123178:0"
@@ -14578,9 +14581,6 @@ msgstr "crwdns43497:0crwdne43497:0"
 msgid "Withdraw funds from your MT5 account"
 msgstr "crwdns43159:0crwdne43159:0"
 
-msgid "Withdraw your funds"
-msgstr "crwdns163976:0crwdne163976:0"
-
 msgid "Withdrawal"
 msgstr "crwdns41824:0crwdne41824:0"
 
@@ -14812,6 +14812,9 @@ msgstr "crwdns40638:0crwdne40638:0"
 msgid "You have funds in these Binary accounts:"
 msgstr "crwdns124288:0crwdne124288:0"
 
+msgid "You have funds in these Deriv X accounts:"
+msgstr "crwdns168151:0crwdne168151:0"
+
 msgid "You have funds in these MT5 accounts:"
 msgstr "crwdns124290:0crwdne124290:0"
 
@@ -14829,6 +14832,9 @@ msgstr "crwdns167887:0%1crwdnd167887:0%2crwdne167887:0"
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "crwdns124292:0crwdne124292:0"
+
+msgid "You have open positions in these Deriv X accounts:"
+msgstr "crwdns168153:0crwdne168153:0"
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "crwdns124294:0crwdne124294:0"
