@@ -181,7 +181,7 @@ const Footer = () => (
                                     </a>
                                 </div>
                                 <div className='age-restriction-sign'>
-                                    <img className='responsive' src={it.url_for('images/pages/footer/18+.svg')} />
+                                    <img className='responsive' src={it.url_for('images/pages/footer/18.svg')} />
                                 </div>
                             </div>
                             <SocialIcons
