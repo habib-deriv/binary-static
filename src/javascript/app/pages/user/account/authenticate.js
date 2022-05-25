@@ -1129,12 +1129,13 @@ const Authenticate = (() => {
             document_number;
         
         const filtered_documents =
-            country_code === 'gh'
+        // Disabled documents for certain countries. Remove when BE implements fix from their side
+            ['gh', 'ng'].includes(country_code)
                 ? Object.keys(documents_supported).filter(d => d !== 'voter_id')
                 : Object.keys(documents_supported);
 
         available_document_list = filtered_documents.map(d => {
-            const { new_display_name, example_format, sample_image } = getDocumentData(country_code, d);
+            const { new_display_name, example_format, sample_image } = getDocumentData(country_code, d) || {};
             const { format:regex, display_name } = documents_supported[d];
             return { id: d, text: new_display_name || display_name, example_format, sample_image, regex };
         });
@@ -1369,8 +1370,6 @@ const Authenticate = (() => {
                 showCTAButton('document', 'pending');
                 break;
             case 'suspected':
-                $('#unverified').setVisibility(1);
-                break;
             case 'rejected':
                 if (Number(submissions_left) < 1) {
                     $('#limited_poi').setVisibility(1);
@@ -1466,8 +1465,9 @@ const Authenticate = (() => {
             handleCountrySelector();
         } else if (is_fully_authenticated) {
             $('#authentication_verified').setVisibility(1);
-        // For statuses set from BO, last attempt will be null
-        } else if (!identity_last_attempt) {
+        } else if (!identity_last_attempt ||
+            // Prioritise verified status from back office. How we know this is if there is mismatch between current statuses (Should be refactored)
+            (identity_status === 'verified' && identity_status !== identity_last_attempt.status)) {
             $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
                 case 'pending':

@@ -7,6 +7,7 @@ const FormProgress = require('../../../common/form_progress');
 const getElementById = require('../../../../_common/common_functions').getElementById;
 const param = require('../../../../_common/url').param;
 const { localize } = require('../../../../_common/localize');
+const isMobile = require('../../../../_common/os_detect').isMobile;
 
 const RealAccountOpening = (() => {
     let real_account_signup_target,
@@ -66,7 +67,20 @@ const RealAccountOpening = (() => {
             getElementById('real_account_wrapper').setVisibility(1);
             getElementById('account_opening_steps').setVisibility(1);
             renderStep();
-            runNextFix();
+            if (isMobile()){
+                runNextFix();
+            }
+            $('.select').keyup((e) => {
+                const selected = Array.from(e.target.classList).includes('focused');
+                if (e.keyCode === 9 && selected) {
+                    e.target.click();
+                }
+            });
+            $('.select').keydown((e) => {
+                if (e.keyCode === 9) {
+                    e.target.classList.remove('focused');
+                }
+            });
         }
     };
 
@@ -90,7 +104,6 @@ const RealAccountOpening = (() => {
             const formElements = Array.from(form.elements).filter(el => el.tagName !== 'FIELDSET');
             const editableElements = form.querySelectorAll(editableElementsSelector);
             const nonEditableElements = form.querySelectorAll(nonEditableElementsSelector);
-
             for (let i = 1; i < formElements.length; i++){
                 formElements[i - 1].nextFormElement = formElements[i];
             }
@@ -100,6 +113,9 @@ const RealAccountOpening = (() => {
                     if (!userClickDetected && !userTouchDetected){
                         if (element.nextFormElement && event.relatedTarget !== element.nextFormElement){
                             element.nextFormElement.focus();
+                            if (!element.nextFormElement.value.length) {
+                                element.nextFormElement.click();
+                            }
                         }
                     }
                 });
@@ -107,8 +123,9 @@ const RealAccountOpening = (() => {
 
             nonEditableElements.forEach((element) => {
                 element.addEventListener('change', () => {
-                    if (element.nextFormElement){
+                    if (!element.nextFormElement.classList.contains('next_step_button')){
                         element.nextFormElement.focus();
+                        element.nextFormElement.click();
                     }
                 });
             });

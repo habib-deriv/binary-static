@@ -1032,3 +1032,9 @@ $.fn.enjoyhint = function (method) {
     return this;
 };
 
+$(window).on('popstate', function() {
+    if (document.getElementById('guideBtn') && (document.getElementsByClassName('enjoyhint')[0])) {
+        var $body = $('body');
+        $body.enjoyhint('hide')
+    }
+});

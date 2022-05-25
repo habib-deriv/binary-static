@@ -89,7 +89,7 @@ const Regulation = () => {
             </div>
 
             <Box header={it.L('Deriv Limited')} first>
-                <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
+                <p>{it.L('Deriv Limited, with registered office at 13 Castle Street, St. Helier, JE2 3BT, Jersey, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
             <Box header={it.L('Deriv Investments (Europe) Limited')} >
@@ -554,13 +554,6 @@ const Regulation = () => {
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
-
-                <Box header={it.L('Deriv (MX) Ltd')} >
-                    <p>{it.L('Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under [_1]account no. 39172[_3] and by the Gambling Supervision Commission in the Isle of Man ([_2]view licence[_3]).', '<a href="https://www.gamblingcommission.gov.uk/public-register/business/detail/39172" target="_blank" rel="noopener noreferrer">', '<a href="https://deriv.com/regulatory/Deriv_(MX)_Ltd.pdf" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
-                    <p>{it.L('Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd.')}</p>
-                    <RegulatorText />
-                    <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
-                </Box>
             </div>
 
             <Box header={it.L('Deriv (SVG) LLC')} >
@@ -569,7 +562,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Deriv (V) Ltd')} >
-                <p>{it.L('Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission.')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. This company does not offer CFDs on cryptocurrencies. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />

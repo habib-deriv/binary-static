@@ -7,6 +7,7 @@ const hasAccountType = require('../../../../../_common/base/client_base').hasAcc
 const getElementById = require('../../../../../_common/common_functions').getElementById;
 const localize = require('../../../../../_common/localize').localize;
 const applyToAllElements = require('../../../../../_common/utility').applyToAllElements;
+const State = require('../../../../../_common/storage').State;
 
 const AccountClosure = (() => {
     let reason_checkbox_list,
@@ -25,11 +26,23 @@ const AccountClosure = (() => {
         el_remain_characters_warning,
         el_deacivate_button,
         el_error_no_selection,
-        el_submit_loading;
+        el_submit_loading,
+        el_error_title,
+        el_forbidden_characters;
 
     const number_of_steps = 3;
     const max_reason_length = 250;
     selected_reasons = '';
+
+    const isDxtradeAllowed = () => {
+        const landing_companies = State.getResponse('landing_company');
+
+        if (!State.getResponse('website_status.clients_country') || !landing_companies || !Object.keys(landing_companies).length) { return true; }
+
+        return (
+            'dxtrade_financial_company' in landing_companies || 'dxtrade_gaming_company' in landing_companies
+        );
+    };
 
     const onLoad = () => {
         reason_checkbox_list = document.getElementsByName('reason-checkbox');
@@ -48,11 +61,15 @@ const AccountClosure = (() => {
         el_error_msg = getElementById('error_msg');
         el_error_no_selection = getElementById('error_no_selection');
         el_submit_loading = getElementById('submit_loading');
+        el_error_title = getElementById('closure_error_title');
+        el_forbidden_characters = getElementById('forbidden_characters');
 
         el_closure_loading.setVisibility(1);
         const hideDialogs = () => {
             el_account_closure_warning.setVisibility(0);
             el_account_closure_error.setVisibility(0);
+            el_forbidden_characters.setVisibility(0);
+            el_error_title.innerHTML = localize('Action required!');
         };
         hideDialogs();
 
@@ -60,10 +77,15 @@ const AccountClosure = (() => {
         BinarySocket.wait('landing_company').then(() => {
             if (!has_virtual_only) {
                 BinarySocket.send({ statement: 1, limit: 1 });
-                BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+                BinarySocket.wait('landing_company', 'get_account_status', 'statement', 'website_status').then(async () => {
                     const is_eligible = await Metatrader.isEligible();
+
                     if (is_eligible) {
-                        applyToAllElements('.metatrader-link', (element) => { element.setVisibility(1); });
+                        if (isDxtradeAllowed()) {
+                            applyToAllElements('.cfd-link', (element) => { element.setVisibility(1); });
+                        } else {
+                            applyToAllElements('.metatrader-link', (element) => { element.setVisibility(1); });
+                        }
                     }
                 });
             }
@@ -172,13 +194,13 @@ const AccountClosure = (() => {
         const data = { account_closure: 1, reason: getReason() };
         BinarySocket.send(data).then(async (response) => {
             if (response.error) {
-                el_submit_loading.setVisibility(0);
                 if (response.error.details) {
                     await showErrorPopUp(response);
                     el_account_closure_error.setVisibility(1);
                 } else {
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                 }
+                el_submit_loading.setVisibility(0);
                 el_step_2_submit.setAttribute('disabled', false);
             } else {
                 Client.sendLogoutRequest(false, Url.urlFor('deactivated-account'));
@@ -186,8 +208,12 @@ const AccountClosure = (() => {
         });
     };
 
+    const getMT5MarketType = (mt5_account) => mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
+
     const showErrorPopUp = async (response) => {
         const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
+        const dxtrade_accounts_list = (await BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' })).trading_platform_accounts;
+
         // clear all previously added details first
         const previous_parent = document.getElementsByClassName('account-closure-details');
         if (previous_parent) { Array.from(previous_parent).forEach(item => { item.parentNode.removeChild(item); }); }
@@ -210,47 +236,59 @@ const AccountClosure = (() => {
             el_div.appendChild(el_inner_div);
             el_section_parent.appendChild(el_div);
             el_section_parent.appendChild(el_span);
-
             const el_section = getElementById(section_id);
             el_section.setVisibility(1).appendChild(el_section_parent);
         };
         const getMTDisplay = (account) => {
             const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
-            const market_type = mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
+            const market_type = getMT5MarketType(mt5_account);
             return Client.getMT5AccountDisplays(market_type, mt5_account.sub_account_type).short;
         };
-        if (response.error.details.open_positions) {
-            Object.keys(response.error.details.open_positions).forEach((account) => {
-                const txt_positions = `${response.error.details.open_positions[account]} ${localize('position(s)')}`;
-                if (/^MT/.test(account)) {
-                    section_id = 'account_closure_open_mt';
-                    display_name = getMTDisplay(account);
-                } else {
-                    section_id = 'account_closure_open';
-                    display_name = Currency.getCurrencyName(Client.get('currency', account));
-                }
-                addSection(account, txt_positions);
-            });
-        }
-        if (response.error.details.balance) {
-            Object.keys(response.error.details.balance).forEach((account) => {
-                const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
-                if (/^MT/.test(account)) {
-                    section_id = 'account_closure_balance_mt';
-                    display_name = getMTDisplay(account);
-                } else {
-                    section_id = 'account_closure_balance';
-                    display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
-                }
-                addSection(account, txt_balance);
-            });
-        }
+        const getDxtradeDisplay = (account) => {
+            const dxtrade_account = (dxtrade_accounts_list.find(acc => acc.account_id === account) || {});
+            return Client.getMT5AccountDisplays(dxtrade_account.market_type, 'financial').short;
+        };
+        Object.keys(response.error.details.open_positions || {}).forEach((account) => {
+            const txt_positions = `${response.error.details.open_positions[account]} ${localize('position(s)')}`;
+            if (/^MT/.test(account)) {
+                section_id = 'account_closure_open_mt';
+                display_name = getMTDisplay(account);
+            } else if (/^DX/.test(account)) {
+                section_id = 'account_closure_open_dxtrade';
+                display_name = getDxtradeDisplay(account);
+            } else {
+                section_id = 'account_closure_open';
+                display_name = Currency.getCurrencyName(Client.get('currency', account));
+            }
+            addSection(account, txt_positions);
+        });
+        Object.keys(response.error.details.balance || {}).forEach((account) => {
+            const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
+            if (/^MT/.test(account)) {
+                section_id = 'account_closure_balance_mt';
+                display_name = getMTDisplay(account);
+            } else if (/^DX/.test(account)) {
+                section_id = 'account_closure_balance_dxtrade';
+                display_name = getDxtradeDisplay(account);
+            } else {
+                section_id = 'account_closure_balance';
+                display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
+            }
+            addSection(account, txt_balance);
+        });
         if (response.error.details.pending_withdrawals) {
             Object.keys(response.error.details.pending_withdrawals).forEach((account) => {
                 const txt_pending_withdrawals = `${response.error.details.pending_withdrawals[account]} ${localize('withdrawal(s)')}`;
                 section_id = 'account_closure_pending_withdrawals';
                 addSection(account, txt_pending_withdrawals);
             });
+        }
+        const { reason } = response.error.details;
+        if (reason && reason.includes('String does not match')){
+            el_error_title.innerHTML = localize('We couldn’t read that!');
+            section_id = 'forbidden_characters';
+            const el_section = getElementById(section_id);
+            el_section.setVisibility(1);
         }
     };
 

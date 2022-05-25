@@ -16,7 +16,8 @@ const ChangePassword = (() => {
         $trading_password_container,
         social_signup_identifier,
         forgot_binary_pw_btn_id,
-        forgot_trading_pw_btn_id;
+        forgot_trading_pw_btn_id,
+        $frm_trading_password_id;
 
     const social_signups = {
         'Google': {
@@ -82,16 +83,19 @@ const ChangePassword = (() => {
             getElementById('frm_change_password').setVisibility(0);
         } else {
             $social_signup_container.setVisibility(1);
-            getElementById('linked_social_hint').innerHTML = localize('You\'re using your [_1] account to log in to your Binary.com account. To change your login method into using a username and password, click the [_2]Unlink[_3] button.', [ social_signups[social_signup_identifier].name, '<strong>', '</strong>' ]);
-            getElementById('linked_social_identifier').innerHTML = localize('Linked with [_1]', social_signups[social_signup_identifier].name);
-            getElementById('ic_linked_social_identifier').src = Url.urlForStatic(`images/pages/account_password/${social_signups[social_signup_identifier].icon}.svg`);
+
+            if (social_signup_identifier) {
+                getElementById('linked_social_hint').innerHTML = localize('You\'re using your [_1] account to log in to your Binary.com account. To change your login method into using a username and password, click the [_2]Unlink[_3] button.', [ social_signups[social_signup_identifier].name, '<strong>', '</strong>' ]);
+                getElementById('linked_social_identifier').innerHTML = localize('Linked with [_1]', social_signups[social_signup_identifier].name);
+                getElementById('ic_linked_social_identifier').src = Url.urlForStatic(`images/pages/account_password/${social_signups[social_signup_identifier].icon}.svg`);
+            }
 
             // Handle unlinking social signup
             $(social_unlink_btn_id).off('click').on('click', () => {
                 Dialog.confirm({
                     id               : 'unlink_confirmation_dialog',
                     localized_message: localize('You will need to set a password to complete the process.'),
-                    localized_title  : localize('Are you sure you want to unlink from [_1]?', social_signup_identifier),
+                    localized_title  : localize('Are you sure you want to unlink from [_1]?', social_signup_identifier || ' '),
                     cancel_text      : localize('Cancel'),
                     ok_text          : localize('Unlink'),
                     onConfirm        : () => onSentEmail('unlink', social_signup_identifier),
@@ -119,14 +123,19 @@ const ChangePassword = (() => {
         social_signup_identifier        = '';
         forgot_binary_pw_btn_id         = '#forgot_binary_pw_btn';
         forgot_trading_pw_btn_id        = '#forgot_trading_pw_btn';
+        $frm_trading_password_id        = $('#frm_trading_password');
 
         $change_password_loading.setVisibility(1);
 
-        BinarySocket.wait('get_account_status').then(() => {
+        BinarySocket.wait('get_account_status').then((response) => {
+            const account_status        = response.get_account_status.status;
+            const has_social_signup     = hasSocialSignup();
             $change_password_loading.setVisibility(0);
             $change_password_container.setVisibility(1);
-            const has_social_signup             = hasSocialSignup();
 
+            if (!account_status.includes('mt5_password_not_set')) {
+                $frm_trading_password_id.setVisibility(1);
+            }
             if (has_social_signup) {
                 initSocialSignup();
             } else {

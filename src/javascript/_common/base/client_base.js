@@ -1,11 +1,12 @@
-const moment           = require('moment');
-const isCryptocurrency = require('./currency_base').isCryptocurrency;
-const SocketCache      = require('./socket_cache');
-const localize         = require('../localize').localize;
-const LocalStore       = require('../storage').LocalStore;
-const State            = require('../storage').State;
-const getPropertyValue = require('../utility').getPropertyValue;
-const isEmptyObject    = require('../utility').isEmptyObject;
+const moment                 = require('moment');
+const isCryptocurrency       = require('./currency_base').isCryptocurrency;
+const SocketCache            = require('./socket_cache');
+const localize               = require('../localize').localize;
+const LocalStore             = require('../storage').LocalStore;
+const State                  = require('../storage').State;
+const getHasRealMt5OrDxtrade = require('../utility').getHasRealMt5OrDxtrade;
+const getPropertyValue       = require('../utility').getPropertyValue;
+const isEmptyObject          = require('../utility').isEmptyObject;
 
 const ClientBase = (() => {
     const storage_key = 'client.accounts';
@@ -379,26 +380,22 @@ const ClientBase = (() => {
             // so we should compare '' === undefined instead
             return (same_cur_allowed[from_landing_company] || '') === to_landing_company;
         }
-        // or for other clients if current account is cryptocurrency it should only transfer to fiat currencies and vice versa
-        const is_from_crypto = isCryptocurrency(from_currency);
-        const is_to_crypto   = isCryptocurrency(to_currency);
-        return (is_from_crypto ? !is_to_crypto : is_to_crypto);
+        return true;
     };
 
     const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
-        const currency             = get('currency');
-        const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
+    const canChangeCurrency = (statement, mt5_login_list, dxtrade_accounts_list, loginid, is_current = true) => {
+        const currency             = get('currency', loginid);
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
-        const has_account_criteria = has_no_transaction && has_no_mt5;
-
+        const has_account_criteria = has_no_transaction &&
+            !getHasRealMt5OrDxtrade(mt5_login_list, dxtrade_accounts_list);
         // Current API requirements for currently logged-in user successfully changing their account's currency:
         // 1. User must not have made any transactions
-        // 2. User must not have any MT5 account
+        // 2. User must not have any real MT5 or Deriv X account
         // 3. Not be a crypto account
         // 4. Not be a virtual account
-        return is_current ? currency && !get('is_virtual') && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
+        return is_current ? currency && !get('is_virtual', loginid) && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
     };
 
     const isOptionsBlocked = () => {

@@ -678,20 +678,6 @@ body #not_authenticated_financial ul.checked > li {
     list-style: none;
 }
 
-.liquidity-solutions-content {
-    .box {
-        border: 1px solid $COLOR_GRAY_SHADE;
-        min-height: 256px;
-
-        img {
-            height: 48px;
-        }
-    }
-    .white-bg {
-        background-color: $COLOR_WHITE;
-    }
-}
-
 .about-us-content {
     .about-us .values-box {
         display: flex;
@@ -918,6 +904,10 @@ body #not_authenticated_financial ul.checked > li {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid $COLOR_LIGHT_GRAY;
+
+    .next_step_button:focus {
+        outline: 2px solid $COLOR_BLUE;
+    }
 }
 
 #page_title {
