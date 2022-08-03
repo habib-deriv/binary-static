@@ -1,4 +1,4 @@
-# Binary-Static
+# Binary-Static TEST PR
 
 This repository contains the static HTML, Javascript, CSS, and images content of the [Binary.com](http://www.binary.com) website.
 
