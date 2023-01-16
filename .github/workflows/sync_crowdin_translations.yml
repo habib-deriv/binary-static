@@ -60,7 +60,7 @@ jobs:
             # This check also allows a repo admin to disable the Slack message by removing the secret.
             if [ -n "${{ secrets.TRANSLATIONS_SLACK_WEBHOOK }}" ]; then
               echo "Sending message to Slack (#team_translations)"
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"There are new or updated strings available for Binary.com (https://crowdin.com/project/binary-static)."}' ${{ secrets.TRANSLACK_WEBHOOK }}
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"There are new or updated strings available for Binary.com (https://crowdin.com/project/binary-static)."}' ${{ secrets.TRANSLATIONS_SLACK_WEBHOOK }}
             fi
           else
             echo "No new string detected. Skip uploading messages.pot to Crowdin."
@@ -86,8 +86,14 @@ jobs:
             git commit -m "translations: 📚 sync translations with crowdin"
 
             # Force push to this branch in case a previous run created it.
-            git push --set-upstream origin "$branch_name"
+            git push --set-upstream origin "$branch_name" -f
 
-            # Create a pull request
-            hub pull-request -b master -h "$branch_name" -m "translations: 📚 sync translations with crowdin"
+            sudo apt install gh
+            gh auth login --with-token <<< ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+            gh pr close "$branch_name" || true
+            gh pr create --fill --base "master" --head "binary-com:$branch_name"
+
+            echo "Attempting to merge the PR."
+            gh pr merge "$branch_name" --admin --squash
+            echo "**The translation PR has beed merged successfully.**"
           fi
